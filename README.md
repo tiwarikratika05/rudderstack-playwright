@@ -1,45 +1,36 @@
-## 📌 Rudderstack Playwright Cucumber Framework
+# Rudderstack Playwright + Cucumber Framework
 
-### **Overview**
-This is a Playwright automation framework using **Cucumber (BDD)** for testing Rudderstack flows.  
-The framework includes:
-- **Playwright** for browser automation & API testing  
-- **Cucumber** for BDD-style test execution  
-- Page Object Model (POM) structure for maintainability  
-- **GitHub Actions** CI pipeline
+This repository contains an **end-to-end automation framework** for testing Rudderstack flows using **Playwright** with **Cucumber (BDD)**.  
+The framework automates login, navigation to the Connections page, fetching Data Plane URL and Write Key, sending API events, and verifying event counts from the UI.
 
 ---
 
-### **📂 Project Structure**
-rudderstack-playwright/
-│
+## 📂 Project Structure
+
+.
 ├── src/
-│ ├── features/ # Cucumber feature files
-│ ├── steps/ # Step definitions
+│ ├── features/ # BDD feature files
 │ ├── pages/ # Page Object Model classes
-│ ├── utils/ # API helpers & utilities
-│
+│ ├── steps/ # Step definitions linked to features
+│ ├── support/ # Custom World, hooks, utilities
+│ ├── utils/ # API helper functions
+│ └── ...
 ├── package.json
-├── playwright.config.ts
-├── README.md
+└── .github/workflows/ci.yml # GitHub Actions CI workflow
 
 ---
 
-### **⚙️ Installation**
-1. **Clone the repository**  
-   git clone git@github.com:tiwarikratika05/rudderstack-playwright.git
-   cd rudderstack-playwright
-Install dependencies
+## 🚀 How to Run Locally
+
+### 1️⃣ Install dependencies
 npm install
 
-Create a .env file with your credentials:
-BASE_URL=https://example.com
+2️⃣ Set environment variables
+Create a .env file in the project root:
+BASE_URL=https://app.rudderstack.com
 EMAIL=your_email@example.com
 PASSWORD=your_password
 
-▶️ Running Tests
-Run all tests:
+3️⃣ Run tests
 npm run test
-Run tests with UI mode:
-npx cucumber-js --require-module ts-node/register --require src/steps/**/*.ts --publish
-
+This will run Playwright + Cucumber tests in headed mode by default (update in script if needed).
