@@ -1,0 +1,25 @@
+{
+  "name": "rudderstack-playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js src/features/**/*.feature --require-module ts-node/register --require src/steps/**/*.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.1.0",
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.2.1",
+    "dotenv": "^17.2.1",
+    "multiple-cucumber-html-reporter": "^3.9.3",
+    "playwright": "^1.54.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "winston": "^3.17.0"
+  }
+}
